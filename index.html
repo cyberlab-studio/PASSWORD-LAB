@@ -1,0 +1,135 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Password Lab | Seguridad digital</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ENCABEZADO -->
+    <header class="header">
+        <div class="logo">
+            <span>🔐</span>
+            <h1>LABORATORIO DE CONTRASEÑAS</h1>
+        </div>
+
+        <span class="header-tag">JUEGO DE SEGURIDAD DIGITAL</span>
+    </header>
+
+
+    <!-- PANTALLA PRINCIPAL -->
+    <main>
+
+        <section id="home" class="screen active">
+
+            <div class="hero">
+                <span class="eyebrow">LABORATORIO DE SEGURIDAD DIGITAL</span>
+
+                <h2>
+                    ¿Qué tan segura<br>
+                    es tu contraseña?
+                </h2>
+
+                <p>
+                    Poné a prueba tus conocimientos, resolvé desafíos
+                    y descubrí cómo proteger tu información en internet.
+                </p>
+
+                <button id="start-btn" class="primary-btn">
+                    COMENZAR JUEGO →
+                </button>
+            </div>
+
+            <div class="activities">
+
+                <div class="activity-card">
+                    <span>01</span>
+                    <h3>Cuenta vulnerada</h3>
+                    <p>Ayudá a un usuario a recuperar su seguridad.</p>
+                </div>
+
+                <div class="activity-card">
+                    <span>02</span>
+                    <h3>¿Cuál elegirías?</h3>
+                    <p>Compará diferentes contraseñas.</p>
+                </div>
+
+                <div class="activity-card">
+                    <span>03</span>
+                    <h3>Detectá el error</h3>
+                    <p>Descubrí qué prácticas son inseguras.</p>
+                </div>
+
+                <div class="activity-card">
+                    <span>04</span>
+                    <h3>Creá tu contraseña</h3>
+                    <p>Construí una contraseña segura.</p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ÁREA DEL JUEGO -->
+        <section id="game" class="screen">
+
+            <div class="game-header">
+                <button id="back-btn" class="secondary-btn">
+                    ← Salir
+                </button>
+
+                <span id="progress">DESAFÍO 1 DE 4</span>
+
+                <span id="score">PUNTOS: 0</span>
+            </div>
+
+            <div id="game-content">
+                <!-- JavaScript cargará los desafíos aquí -->
+            </div>
+
+        </section>
+
+
+        <!-- RESULTADO FINAL -->
+        <section id="results" class="screen">
+
+            <div class="results-content">
+                <span>🔐</span>
+
+                <h2>¡Juego completado!</h2>
+
+                <p id="final-score"></p>
+
+                <p>
+                    Ahora tenés nuevas herramientas para proteger
+                    tus cuentas y tu información personal.
+                </p>
+
+                <button id="restart-btn" class="primary-btn">
+                    VOLVER A JUGAR →
+                </button>
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- PIE DE PÁGINA -->
+    <footer>
+        <p>PASSWORD LAB © 2026</p>
+        <p>La seguridad digital comienza con vos.</p>
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>

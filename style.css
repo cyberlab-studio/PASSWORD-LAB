@@ -1,0 +1,356 @@
+
+/* CONFIGURACIÓN GENERAL */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #080d18;
+    color: #f1f5f9;
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+}
+
+
+/* ENCABEZADO */
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 8%;
+    border-bottom: 1px solid #1c293c;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo span {
+    font-size: 28px;
+}
+
+.logo h1 {
+    font-size: 20px;
+    letter-spacing: 3px;
+}
+
+.header-tag {
+    color:  #5c0ce7;
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+
+/* PANTALLAS */
+
+.screen {
+    display: none;
+    padding: 60px 8%;
+}
+
+.screen.active {
+    display: block;
+}
+
+
+/* PRESENTACIÓN */
+
+.hero {
+    text-align: center;
+    max-width: 750px;
+    margin: 50px auto 70px;
+}
+
+.eyebrow {
+    color:  #5c0ce7;
+    font-size: 12px;
+    letter-spacing: 3px;
+}
+
+.hero h2 {
+    font-size: clamp(38px, 6vw, 65px);
+    line-height: 1.1;
+    margin: 25px 0;
+}
+
+.hero p {
+    color: #94a3b8;
+    line-height: 1.8;
+    font-size: 16px;
+    max-width: 550px;
+    margin: 0 auto 30px;
+}
+
+
+/* BOTONES */
+
+.primary-btn {
+    background:  #5c0ce7;
+    color: #07130f;
+    border: none;
+    padding: 17px 28px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.primary-btn:hover {
+    background: #5c0ce7;
+    transform: translateY(-3px);
+}
+
+.secondary-btn {
+    background: transparent;
+    color: #f1f5f9;
+    border: 1px solid #334155;
+    padding: 10px 18px;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+
+/* TARJETAS */
+
+.activities {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.activity-card {
+    background: #111b2b;
+    border: 1px solid #26364d;
+    border-radius: 12px;
+    padding: 25px 20px;
+    transition: 0.3s;
+}
+
+.activity-card:hover {
+    border-color:  #5c0ce7;
+    transform: translateY(-5px);
+}
+
+.activity-card span {
+    color: #35cbd6;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.activity-card h3 {
+    margin: 18px 0 10px;
+    font-size: 17px;
+}
+
+.activity-card p {
+    color: #94a3b8;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+
+/* ÁREA DEL JUEGO */
+
+.game-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 50px;
+    color:  #5c0ce7;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+
+/* RESULTADOS */
+
+.results-content {
+    text-align: center;
+    max-width: 550px;
+    margin: 80px auto;
+}
+
+.results-content span {
+    font-size: 65px;
+}
+
+.results-content h2 {
+    margin: 25px 0;
+    font-size: 32px;
+}
+
+.results-content p {
+    color: #94a3b8;
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+
+/* PIE DE PÁGINA */
+
+footer {
+    border-top: 1px solid #1c293c;
+    padding: 25px;
+    text-align: center;
+    color: #64748b;
+    font-size: 12px;
+    line-height: 2;
+}
+
+
+/* ADAPTACIÓN A CELULARES */
+
+@media (max-width: 800px) {
+
+    .activities {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .header-tag {
+        display: none;
+    }
+
+    .screen {
+        padding: 35px 5%;
+    }
+
+}
+
+@media (max-width: 450px) {
+
+    .activities {
+        grid-template-columns: 1fr;
+    }
+
+    .game-header {
+        flex-wrap: wrap;
+    }
+
+}
+
+
+/* ANIMACIONES GENERALES */
+
+.screen.active {
+    animation: appear 0.45s ease;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* TARJETAS INTERACTIVAS */
+
+.activity-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.activity-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg,  #5c0ce7, #45cef4);
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.activity-card:hover::before {
+    opacity: 1;
+}
+
+
+/* BOTONES DE RESPUESTA */
+
+.option-btn {
+    text-align: left;
+    width: 100%;
+    transition: 0.25s;
+    font-size: 14px;
+}
+
+.option-btn:hover:not(:disabled) {
+    border-color:  #5c0ce7;
+    background: #172b2d;
+    transform: translateX(5px);
+}
+
+.option-btn:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+}
+
+
+/* BARRA DE PROGRESO */
+
+#password-progress {
+    box-shadow: 0 0 12px #10b5cfa8;
+}
+
+
+/* INPUTS */
+
+input:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px #35d69a25;
+}
+
+
+/* RESULTADOS */
+
+.results-content {
+    background: #111b2b;
+    border: 1px solid #26364d;
+    border-radius: 18px;
+    padding: 45px 25px;
+    animation: appear 0.5s ease;
+}
+
+.results-content span {
+    display: inline-block;
+    animation: floating 2s infinite ease-in-out;
+}
+
+@keyframes floating {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-9px);
+    }
+}
+
+
+/* SELECCIÓN DE TEXTO */
+
+::selection {
+    background: #5c0ce7;
+    color: #080d18;
+}
+
+
+/* SCROLL */
+
+html {
+    scroll-behavior: smooth;
+}
